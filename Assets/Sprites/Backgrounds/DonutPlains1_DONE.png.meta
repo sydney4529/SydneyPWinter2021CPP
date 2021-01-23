@@ -7,46 +7,46 @@ TextureImporter:
     second: Level
   - first:
       213: -7698091877536220419
-    second: DonutPlains1_DONE_1
+    second: YoshiCoin1
   - first:
       213: -6223913005026926526
-    second: DonutPlains1_DONE_2
+    second: Coin1
   - first:
       213: -8251548219702976207
-    second: DonutPlains1_DONE_3
+    second: BlockQuestion1
   - first:
       213: -3135234623664698759
-    second: DonutPlains1_DONE_4
+    second: BlockRegular1
   - first:
       213: -5401252091279294996
-    second: DonutPlains1_DONE_5
+    second: BlockUsed
   - first:
       213: 6902963903534496507
-    second: DonutPlains1_DONE_6
+    second: PowerUpMushroom2
   - first:
       213: -1207279636931453471
-    second: DonutPlains1_DONE_7
+    second: GoalPosts1
   - first:
       213: 6343335243216876344
-    second: DonutPlains1_DONE_8
+    second: MidPost1
   - first:
       213: 8963360740990433023
-    second: DonutPlains1_DONE_9
+    second: MidPost2
   - first:
       213: -4155499301291857916
-    second: DonutPlains1_DONE_10
+    second: PowerUpMushroom1
   - first:
       213: -6150482773385901676
     second: DonutPlains1_DONE_11
   - first:
       213: -6400644745172546573
-    second: DonutPlains1_DONE_12
+    second: Freeman1
   - first:
       213: -1617794307008389237
-    second: DonutPlains1_DONE_13
+    second: MidPost3
   - first:
       213: 5846275088552179849
-    second: DonutPlains1_DONE_14
+    second: GoalPosts2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,13 +157,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_1
+      name: YoshiCoin1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 131
-        width: 23
-        height: 30
+        x: 19
+        y: 134
+        width: 16
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,13 +178,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_2
+      name: Coin1
       rect:
         serializedVersion: 2
-        x: 61
-        y: 136
-        width: 15
-        height: 23
+        x: 64
+        y: 139
+        width: 8
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,13 +199,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_3
+      name: BlockQuestion1
       rect:
         serializedVersion: 2
-        x: 101
-        y: 136
-        width: 23
-        height: 23
+        x: 104
+        y: 139
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,13 +220,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_4
+      name: BlockRegular1
       rect:
         serializedVersion: 2
-        x: 134
-        y: 139
-        width: 22
-        height: 22
+        x: 138
+        y: 141
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,13 +241,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_5
+      name: BlockUsed
       rect:
         serializedVersion: 2
-        x: 169
-        y: 139
-        width: 22
-        height: 22
+        x: 172
+        y: 143
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,13 +262,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_6
+      name: PowerUpMushroom2
       rect:
         serializedVersion: 2
-        x: 238
-        y: 144
-        width: 23
-        height: 22
+        x: 241
+        y: 147
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,13 +283,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_7
+      name: GoalPosts1
       rect:
         serializedVersion: 2
-        x: 331
-        y: 21
-        width: 55
-        height: 153
+        x: 334
+        y: 25
+        width: 48
+        height: 145
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,13 +304,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_8
+      name: MidPost1
       rect:
         serializedVersion: 2
-        x: 426
-        y: 81
-        width: 15
-        height: 70
+        x: 430
+        y: 84
+        width: 8
+        height: 65
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,13 +325,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_9
+      name: MidPost2
       rect:
         serializedVersion: 2
-        x: 451
-        y: 81
-        width: 15
-        height: 70
+        x: 454
+        y: 84
+        width: 8
+        height: 65
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,13 +346,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_10
+      name: PowerUpMushroom1
       rect:
         serializedVersion: 2
-        x: 238
-        y: 114
-        width: 23
-        height: 22
+        x: 241
+        y: 116
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: DonutPlains1_DONE_11
       rect:
         serializedVersion: 2
-        x: 281
-        y: 99
-        width: 22
-        height: 22
+        x: 284
+        y: 103
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,13 +388,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_12
+      name: Freeman1
       rect:
         serializedVersion: 2
-        x: 238
-        y: 81
-        width: 23
-        height: 23
+        x: 241
+        y: 84
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,13 +409,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_13
+      name: MidPost3
       rect:
         serializedVersion: 2
-        x: 436
-        y: 61
-        width: 25
-        height: 10
+        x: 438
+        y: 65
+        width: 19
+        height: 3
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,13 +430,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_14
+      name: GoalPosts2
       rect:
         serializedVersion: 2
-        x: 342
+        x: 343
         y: 0
-        width: 27
-        height: 10
+        width: 24
+        height: 8
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
