@@ -163,22 +163,22 @@ TextureImporter:
     second: Sprite_Mario_52
   - first:
       213: -991126873710766664
-    second: Sprite_Mario_53
+    second: Mario_Cape1
   - first:
       213: -2451452407061476743
-    second: Sprite_Mario_54
+    second: Mario_Cape2
   - first:
       213: -9079682761693699110
-    second: Sprite_Mario_55
+    second: Mario_Cape3
   - first:
       213: 102199271187479275
-    second: Sprite_Mario_56
+    second: Mario_Cape4
   - first:
       213: 4596178438584576817
-    second: Sprite_Mario_57
+    second: Mario_Cape5
   - first:
       213: -223910129502012368
-    second: Sprite_Mario_58
+    second: Mario_Cape6
   - first:
       213: -7734174553045002093
     second: Sprite_Mario_59
@@ -1387,7 +1387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_53
+      name: Mario_Cape1
       rect:
         serializedVersion: 2
         x: 185
@@ -1408,7 +1408,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_54
+      name: Mario_Cape2
       rect:
         serializedVersion: 2
         x: 218
@@ -1429,7 +1429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_55
+      name: Mario_Cape3
       rect:
         serializedVersion: 2
         x: 253
@@ -1450,7 +1450,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_56
+      name: Mario_Cape4
       rect:
         serializedVersion: 2
         x: 286
@@ -1471,7 +1471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_57
+      name: Mario_Cape5
       rect:
         serializedVersion: 2
         x: 315
@@ -1492,7 +1492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_58
+      name: Mario_Cape6
       rect:
         serializedVersion: 2
         x: 345
