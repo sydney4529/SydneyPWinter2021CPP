@@ -4,11 +4,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer marioSprite;
 
     public float speed;
     public int jumpForce;
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        marioSprite = GetComponent<SpriteRenderer>();
 
         initialScale = transform.localScale;
 
@@ -92,15 +95,15 @@ public class PlayerMovement : MonoBehaviour
             isFiring = false;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
-        }
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
+        //}
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.localScale = new Vector3(-initialScale.x, initialScale.y, initialScale.z);
-        }
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.localScale = new Vector3(-initialScale.x, initialScale.y, initialScale.z);
+        //}
 
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
@@ -108,5 +111,11 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isFiring", isFiring);
         anim.SetBool("isCape", isCape);
+
+        if(marioSprite.flipX && horizontalInput > 0 || !marioSprite.flipX && horizontalInput < 0)
+        {
+            marioSprite.flipX = !marioSprite.flipX;
+        }
+
     }
 }
