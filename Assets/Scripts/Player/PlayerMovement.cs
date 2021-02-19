@@ -21,6 +21,38 @@ public class PlayerMovement : MonoBehaviour
     public bool isFiring = false;
     public bool isCape = false;
 
+    int _score;
+    public int score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+            Debug.Log("Current Score is " + _score);
+        }
+    }
+
+    public int maxLives = 3;
+    int _lives = 3;
+    public int lives
+    {
+        get { return _lives; }
+        set
+        {
+            _lives = value;
+            if(_lives > maxLives)
+            {
+                _lives = maxLives;
+            }
+            else if(_lives < 0)
+            {
+                //game over code goes here
+            }
+            Debug.Log("Current lives: " + _lives);
+        }
+    }
+
+
     private Vector3 initialScale;
     // Start is called before the first frame update
     void Start()
@@ -63,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            //Debug.Log("Jumped");
             //make jump velocity always the same, comment out if you dont want it
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
@@ -95,16 +126,6 @@ public class PlayerMovement : MonoBehaviour
             isFiring = false;
         }
 
-        //if (Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftArrow))
-        //{
-        //    transform.localScale = new Vector3(-initialScale.x, initialScale.y, initialScale.z);
-        //}
-
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
 
@@ -117,5 +138,38 @@ public class PlayerMovement : MonoBehaviour
             marioSprite.flipX = !marioSprite.flipX;
         }
 
+    }
+
+    public void startJumpForceChange()
+    {
+        StartCoroutine(JumpForceChange());
+    }
+
+    IEnumerator JumpForceChange()
+    {
+        jumpForce = 500;
+        yield return new WaitForSeconds(2.0f);
+        jumpForce = 350;
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Pickups")
+        {
+            //Debug.Log("hit key");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Pickups curPickup = collision.GetComponent<Pickups>();
+                switch (curPickup.currentCollectible)
+                {
+                    case Pickups.CollectibleType.KEY:
+                        //add to inventory or other mechanic
+                        Destroy(collision.gameObject);
+                        break;
+                }
+            }
+
+        }
+           
     }
 }

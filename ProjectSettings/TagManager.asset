@@ -8,6 +8,7 @@ TagManager:
   - collider
   - PowerUp
   - Collectible
+  - Pickups
   layers:
   - Default
   - TransparentFX

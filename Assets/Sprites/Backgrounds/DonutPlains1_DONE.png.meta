@@ -37,7 +37,7 @@ TextureImporter:
     second: PowerUpMushroom1
   - first:
       213: -6150482773385901676
-    second: DonutPlains1_DONE_11
+    second: Key
   - first:
       213: -6400644745172546573
     second: Freeman1
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_11
+      name: Key
       rect:
         serializedVersion: 2
         x: 284
