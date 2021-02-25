@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 2334583008838244921}
   - component: {fileID: 2123088253}
   - component: {fileID: 8529317200560440281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -333,6 +333,7 @@ MonoBehaviour:
   groundCheckRadius: 0.01
   isFiring: 0
   isCape: 0
+  maxLives: 3
 --- !u!95 &2123088253
 Animator:
   serializedVersion: 3
@@ -366,5 +367,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointLeft: {fileID: 697094524}
   spawnPointRight: {fileID: 1590366592}
-  projectileSpeed: 0
-  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  projectilePrefab: {fileID: 4120734651686393210, guid: 90176da38ebf1cc468e01561064a2610, type: 3}

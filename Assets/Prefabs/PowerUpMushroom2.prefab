@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2886171349644991927}
   - component: {fileID: 2886171349644991926}
   - component: {fileID: 2886171349644991921}
-  - component: {fileID: 7606444322512501030}
+  - component: {fileID: -6059554748936686987}
   m_Layer: 0
   m_Name: PowerUpMushroom2
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &7606444322512501030
+--- !u!114 &-6059554748936686987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2886171349644991920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887cf131cbceb7e46a94eb3468af2ea0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1343eec478d39b34d926f8a04abdd9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCollectible: 0
