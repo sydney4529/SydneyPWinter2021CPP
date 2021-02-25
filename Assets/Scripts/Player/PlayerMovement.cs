@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Pickups")
         {
             //Debug.Log("hit key");
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 Pickups curPickup = collision.GetComponent<Pickups>();
                 switch (curPickup.currentCollectible)
