@@ -9,6 +9,11 @@ TagManager:
   - PowerUp
   - Collectible
   - Pickups
+  - Squished
+  - Enemy
+  - Barrier
+  - EnemyProjectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
@@ -16,12 +21,12 @@ TagManager:
   - Ground
   - Water
   - UI
-  - FireIgnore
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerBullet
+  - EnemyBullet
+  - Player
+  - Enemy
+  - Collectibles
+  - Boundaries
   - 
   - 
   - 

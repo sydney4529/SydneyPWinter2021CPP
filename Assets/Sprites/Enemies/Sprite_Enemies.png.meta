@@ -47,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -8086,7 +8086,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_380
+      name: Turret2_Sit
       rect:
         serializedVersion: 2
         x: 279
@@ -8212,7 +8212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_386
+      name: Turret2_Die
       rect:
         serializedVersion: 2
         x: 472
@@ -8569,7 +8569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_403
+      name: Turret2_Throw5
       rect:
         serializedVersion: 2
         x: 132
@@ -8590,7 +8590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_404
+      name: Turret2_Throw6
       rect:
         serializedVersion: 2
         x: 160
@@ -8611,7 +8611,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_405
+      name: Turret2_Throw7
       rect:
         serializedVersion: 2
         x: 187
@@ -8632,7 +8632,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_406
+      name: Turret2_Throw8
       rect:
         serializedVersion: 2
         x: 217
@@ -9136,7 +9136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_430
+      name: Turret2_Throw1
       rect:
         serializedVersion: 2
         x: 2
@@ -9157,7 +9157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_431
+      name: Turret2_Throw2
       rect:
         serializedVersion: 2
         x: 30
@@ -9178,7 +9178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_432
+      name: Turret2_Throw3
       rect:
         serializedVersion: 2
         x: 60
@@ -9199,7 +9199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_433
+      name: Turret2_Throw4
       rect:
         serializedVersion: 2
         x: 91
@@ -9220,7 +9220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_434
+      name: sprite
       rect:
         serializedVersion: 2
         x: 130
@@ -9241,7 +9241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_435
+      name: sprit
       rect:
         serializedVersion: 2
         x: 158
@@ -9262,7 +9262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_436
+      name: spri
       rect:
         serializedVersion: 2
         x: 187
@@ -9283,7 +9283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_437
+      name: Turret2_Throw9
       rect:
         serializedVersion: 2
         x: 216
@@ -9304,7 +9304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_438
+      name: sp
       rect:
         serializedVersion: 2
         x: 244
@@ -9514,7 +9514,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_448
+      name: Baseball
       rect:
         serializedVersion: 2
         x: 556
@@ -9913,7 +9913,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_467
+      name: KoopaGreenDie1
       rect:
         serializedVersion: 2
         x: 250
@@ -10585,7 +10585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KoopaGreenDie
+      name: KoopaGreenDie2
       rect:
         serializedVersion: 2
         x: 250
