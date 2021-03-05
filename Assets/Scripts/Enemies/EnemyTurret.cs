@@ -45,8 +45,6 @@ public class EnemyTurret : MonoBehaviour
         {
             distance = 5;
         }
-
-        Debug.Log(playerInstance.name);
     }
 
     // Update is called once per frame
@@ -54,7 +52,6 @@ public class EnemyTurret : MonoBehaviour
     {
         if (Vector2.Distance(playerInstance.transform.position, turretSprite.gameObject.transform.position) < distance)
         {
-            Debug.Log("close");
             if (Time.time >= timeSinceLastFire + projectileFireRate)
             {
                 anim.SetBool("Fire", true);
@@ -63,7 +60,7 @@ public class EnemyTurret : MonoBehaviour
         }
         else
         {
-            Debug.Log("too far");
+
         }
 
         if( turretSprite.flipX && playerInstance.transform.position.x > turretSprite.gameObject.transform.position.x || !turretSprite.flipX && playerInstance.transform.position.x < turretSprite.gameObject.transform.position.x)

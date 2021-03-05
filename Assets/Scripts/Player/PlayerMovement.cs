@@ -21,38 +21,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isFiring = false;
     public bool isCape = false;
 
-    int _score;
-    public int score
-    {
-        get { return _score; }
-        set
-        {
-            _score = value;
-            Debug.Log("Current Score is " + _score);
-        }
-    }
-
-    public int maxLives = 3;
-    int _lives = 3;
-    public int lives
-    {
-        get { return _lives; }
-        set
-        {
-            _lives = value;
-            if(_lives > maxLives)
-            {
-                _lives = maxLives;
-            }
-            else if(_lives < 0)
-            {
-                //game over code goes here
-            }
-            Debug.Log("Current lives: " + _lives);
-        }
-    }
-
-
     private Vector3 initialScale;
     // Start is called before the first frame update
     void Start()

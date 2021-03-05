@@ -29,8 +29,6 @@ public class EnemyWalker : MonoBehaviour
         {
             health = 3;
         }
-
-        Debug.Log(health);
     }
 
     // Update is called once per frame
