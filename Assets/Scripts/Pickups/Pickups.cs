@@ -22,19 +22,19 @@ public class Pickups : MonoBehaviour
             {
 
                 case CollectibleType.POWERUP:
-                    Debug.Log("powerup");
+                    //Debug.Log("powerup");
                     collision.GetComponent<PlayerMovement>().startJumpForceChange();
                     Destroy(gameObject);
                     break;
 
                 case CollectibleType.LIVES:
-                    Debug.Log("lives");
+                    //Debug.Log("lives");
                     GameManager.instance.lives++;
                     Destroy(gameObject);
                     break;
 
                 case CollectibleType.COLLECTIBLE:
-                    Debug.Log("colectible");
+                    //Debug.Log("colectible");
                     GameManager.instance.score++;
                     Destroy(gameObject);
                     break;

@@ -58,11 +58,12 @@ public class EnemyWalker : MonoBehaviour
     public void isDead()
     {
         health--;
-        Debug.Log(health);
+        //Debug.Log(health);
         if(health <= 0)
         {
             anim.SetBool("Death", true);
             rb.velocity = Vector2.zero;
+            GameManager.instance.score++;
         }
     }
 

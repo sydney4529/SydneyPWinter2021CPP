@@ -250,7 +250,6 @@ MonoBehaviour:
   groundCheckRadius: 0.01
   isFiring: 0
   isCape: 0
-  maxLives: 3
 --- !u!95 &2123088253
 Animator:
   serializedVersion: 3

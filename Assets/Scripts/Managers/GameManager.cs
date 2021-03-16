@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     static GameManager _instance = null;
 
     public GameObject player;
+    public GameObject playerInstance;
+
+    public LevelManager currentLevel;
 
     public static GameManager instance
     {
@@ -16,17 +19,17 @@ public class GameManager : MonoBehaviour
         set { _instance = value;  }
     }
 
-    int _score = 0;
+    int _score;
     public int score
     {
         get { return _score; }
         set { _score = value;
-            Debug.Log("Current score is: " + _score);
+            //Debug.Log("Current score is: " + _score);
         }
     }
 
     public int maxLives = 3;
-    int _lives = 3;
+    int _lives;
 
     public int lives
     {
@@ -40,8 +43,12 @@ public class GameManager : MonoBehaviour
                     //player.transform.position = new Vector3(-8.36999989f, -3.14599991f, 0f);
                     //score = 0;
                     //player.GetComponent<PlayerMovement>().jumpForce = 350;
-                    SceneManager.LoadScene("Level");
+                    //SceneManager.LoadScene("Level");
                     //_lives = value;
+
+                    //SpawnPlayer(currentLevel.spawnLocation);
+                    Respawn();
+
                 }
             }
             _lives = value;
@@ -94,6 +101,7 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("TitleScreen");
                 lives = 3;
+                score = 0;
             }
 
         }
@@ -108,5 +116,60 @@ public class GameManager : MonoBehaviour
 #endif
         }
 
+    }
+
+    public void SpawnPlayer(Transform spawnLocation)
+    {
+        CameraFollow mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
+        EnemyTurret[] turretEnemy = FindObjectsOfType<EnemyTurret>();
+
+        if (mainCamera)
+        {
+            mainCamera.player = Instantiate(player, spawnLocation.position, spawnLocation.rotation);
+            playerInstance = mainCamera.player;
+
+            for (int i = 0; i < turretEnemy.Length; i++)
+            {
+                turretEnemy[i].playerInstance = playerInstance;
+            }
+
+        }
+        else
+        {
+            SpawnPlayer(spawnLocation);
+        }
+  
+    }
+
+    public void Respawn()
+    {
+        playerInstance.transform.position = currentLevel.spawnLocation.position;
+        playerInstance.GetComponent<PlayerMovement>().jumpForce = 350;
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+          EditorApplication.isPlaying = false;
+        #else
+         application.Quit();
+        #endif
+    }
+
+    public void ReturnToMenu()
+    {
+        if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+
+        score = 0;
+
+        SceneManager.LoadScene("TitleScreen");
     }
 }

@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefdfac6e54d5d24eb653ab77c993964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2334583008838245060, guid: 0110e1528119264498a572191e1ae7a6, type: 3}
+  playerInstance: {fileID: 0}
+  currentLevel: {fileID: 0}
+  maxLives: 3

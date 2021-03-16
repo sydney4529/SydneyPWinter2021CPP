@@ -59,51 +59,53 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
 
-
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Time.timeScale == 1)
         {
-            //make jump velocity always the same, comment out if you dont want it
-            rb.velocity = Vector2.zero;
-            rb.AddForce(Vector2.up * jumpForce);
-            
-        }
 
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow))
-        {
-            isCape = true;
-        }
-        else
-        {
-            isCape = false;
-        }
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                //make jump velocity always the same, comment out if you dont want it
+                rb.velocity = Vector2.zero;
+                rb.AddForce(Vector2.up * jumpForce);
 
-        if (Input.GetKeyUp(KeyCode.Space) && Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            isCape = false;
-        }
-      
+            }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            isFiring = true;
-        }
+            if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.UpArrow))
+            {
+                isCape = true;
+            }
+            else
+            {
+                isCape = false;
+            }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            isFiring = false;
-        }
+            if (Input.GetKeyUp(KeyCode.Space) && Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                isCape = false;
+            }
 
-        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-        anim.SetFloat("speed", Mathf.Abs(horizontalInput));
 
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetBool("isFiring", isFiring);
-        anim.SetBool("isCape", isCape);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                isFiring = true;
+            }
 
-        if(marioSprite.flipX && horizontalInput > 0 || !marioSprite.flipX && horizontalInput < 0)
-        {
-            marioSprite.flipX = !marioSprite.flipX;
+            if (Input.GetButtonUp("Fire1"))
+            {
+                isFiring = false;
+            }
+
+            rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+            anim.SetFloat("speed", Mathf.Abs(horizontalInput));
+
+            anim.SetBool("isGrounded", isGrounded);
+            anim.SetBool("isFiring", isFiring);
+            anim.SetBool("isCape", isCape);
+
+            if (marioSprite.flipX && horizontalInput > 0 || !marioSprite.flipX && horizontalInput < 0)
+            {
+                marioSprite.flipX = !marioSprite.flipX;
+            }
         }
 
     }
@@ -133,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
                     case Pickups.CollectibleType.KEY:
                         //add to inventory or other mechanic
                         Destroy(collision.gameObject);
+                        GameManager.instance.score++;
                         break;
                 }
             }
