@@ -9,14 +9,21 @@ public class PlayerCollision : MonoBehaviour
     Rigidbody2D rb;
     PlayerMovement pm;
 
+    public AudioSource dieSource;
+    public BoxCollider2D playerBox;
+
+    public AudioClip playerDie;
+
     public float bounceForce;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         pm = GetComponent<PlayerMovement>();
+        dieSource = GetComponent<AudioSource>();
+        playerBox = GetComponent<BoxCollider2D>();
 
-        if(bounceForce <= 0)
+        if (bounceForce <= 0)
         {
             bounceForce = 20.0f;
         }
@@ -25,7 +32,17 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!dieSource)
+        {
+            dieSource = gameObject.AddComponent<AudioSource>();
+            dieSource.clip = playerDie;
+            dieSource.loop = false;
+            //dieSource.Play();
+        }
+        else
+        {
+           // dieSource.Play();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,14 +63,20 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyProjectile")
         {
+            playerBox.enabled = false;
+            //dieSource.Play();
             GameManager.instance.lives--;
             Destroy(collision.gameObject);
+            dieSource.Play();
             //Destroy(gameObject);
         }
 
         if(collision.gameObject.tag == "Enemy")
         {
+            playerBox.enabled = false;
+            //dieSource.Play();
             GameManager.instance.lives--;
+            dieSource.Play();
             //Destroy(gameObject);
         }
 

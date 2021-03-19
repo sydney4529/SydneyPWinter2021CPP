@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public LevelManager currentLevel;
 
+    //private bool soundPlaying = false;
+
     public static GameManager instance
     {
         get { return _instance;  }
@@ -47,7 +49,17 @@ public class GameManager : MonoBehaviour
                     //_lives = value;
 
                     //SpawnPlayer(currentLevel.spawnLocation);
-                    Respawn();
+                    //PlayerCollision playerCollider = playerInstance.GetComponent<PlayerCollision>();
+                   // Debug.Log(playerInstance.GetComponent<PlayerCollision>().dieSource.isPlaying);
+                   // Debug.Log(playerInstance.GetComponent<PlayerCollision>().playerBox.enabled);
+
+                    if (playerInstance.GetComponent<PlayerCollision>().dieSource.isPlaying == false && playerInstance.GetComponent<PlayerCollision>().playerBox.enabled == false)
+                    {
+                        //Debug.Log("Should have spawned");
+                        StartCoroutine(WaitCoroutine());
+                        //Respawn();          
+                    }
+                    //Respawn();
 
                 }
             }
@@ -72,6 +84,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         if (instance)
         {
             Destroy(gameObject);
@@ -87,6 +101,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (SceneManager.GetActiveScene().name == "Level")
@@ -143,8 +158,12 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
-        playerInstance.transform.position = currentLevel.spawnLocation.position;
-        playerInstance.GetComponent<PlayerMovement>().jumpForce = 350;
+        if(SceneManager.GetActiveScene().name == "Level")
+        {
+            playerInstance.transform.position = currentLevel.spawnLocation.position;
+            playerInstance.GetComponent<PlayerMovement>().jumpForce = 350;
+            playerInstance.GetComponent<PlayerCollision>().playerBox.enabled = true;
+        }
     }
 
     public void StartGame()
@@ -171,5 +190,18 @@ public class GameManager : MonoBehaviour
         score = 0;
 
         SceneManager.LoadScene("TitleScreen");
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        //Print the time of when the function is first called.
+
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(1);
+        Respawn();
+
+        //After we have waited 5 seconds print the time again.
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

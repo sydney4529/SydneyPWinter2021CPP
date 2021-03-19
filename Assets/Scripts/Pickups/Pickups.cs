@@ -13,6 +13,33 @@ public class Pickups : MonoBehaviour
     }
 
     public CollectibleType currentCollectible;
+    public AudioSource pickupAudioSource;
+    BoxCollider2D pickupCollider;
+
+    private SpriteRenderer sprite;
+
+    public AudioClip pickupAudio;
+
+    private void Start()
+    {
+        pickupAudioSource = gameObject.GetComponent<AudioSource>();
+        pickupCollider = gameObject.GetComponent<BoxCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
+
+        if (pickupAudio)
+        {
+            pickupAudioSource.clip = pickupAudio;
+            pickupAudioSource.loop = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (!pickupAudioSource.isPlaying && !pickupCollider.enabled)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,19 +51,30 @@ public class Pickups : MonoBehaviour
                 case CollectibleType.POWERUP:
                     //Debug.Log("powerup");
                     collision.GetComponent<PlayerMovement>().startJumpForceChange();
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -100);
+
+                    pickupCollider.enabled = false;
+                    pickupAudioSource.Play();
                     break;
 
                 case CollectibleType.LIVES:
                     //Debug.Log("lives");
                     GameManager.instance.lives++;
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -100);
+
+                    pickupCollider.enabled = false;
+                    pickupAudioSource.Play();
                     break;
 
                 case CollectibleType.COLLECTIBLE:
                     //Debug.Log("colectible");
                     GameManager.instance.score++;
-                    Destroy(gameObject);
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -100);
+
+                    pickupCollider.enabled = false;
+                    pickupAudioSource.Play();
                     break;
 
             }

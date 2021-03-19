@@ -14,6 +14,7 @@ TagManager:
   - Barrier
   - EnemyProjectile
   - PlayerProjectile
+  - EnemyWalker
   layers:
   - Default
   - TransparentFX

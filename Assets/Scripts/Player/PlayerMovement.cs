@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer marioSprite;
+    AudioSource jumpAudioSource;
 
     public float speed;
     public int jumpForce;
@@ -21,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isFiring = false;
     public bool isCape = false;
 
+    public AudioClip jumpSFX;
+    
+
     private Vector3 initialScale;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         marioSprite = GetComponent<SpriteRenderer>();
+        jumpAudioSource = GetComponent<AudioSource>();
+       
 
         initialScale = transform.localScale;
 
@@ -67,6 +73,17 @@ public class PlayerMovement : MonoBehaviour
                 //make jump velocity always the same, comment out if you dont want it
                 rb.velocity = Vector2.zero;
                 rb.AddForce(Vector2.up * jumpForce);
+                if (!jumpAudioSource)
+                {
+                    jumpAudioSource = gameObject.AddComponent<AudioSource>();
+                    jumpAudioSource.clip = jumpSFX;
+                    jumpAudioSource.loop = false;
+                    jumpAudioSource.Play();
+                }
+                else
+                {
+                    jumpAudioSource.Play();
+                }
 
             }
 
@@ -134,7 +151,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     case Pickups.CollectibleType.KEY:
                         //add to inventory or other mechanic
-                        Destroy(collision.gameObject);
+                        //Destroy(collision.gameObject);
+                        curPickup.transform.position = new Vector3(curPickup.transform.position.x, curPickup.transform.position.y, -100);
+                        curPickup.pickupAudioSource.Play();
                         GameManager.instance.score++;
                         break;
                 }

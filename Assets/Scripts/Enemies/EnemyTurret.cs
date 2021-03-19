@@ -24,12 +24,24 @@ public class EnemyTurret : MonoBehaviour
     public int health;
 
     Animator anim;
+    AudioSource deathSource;
+    Collider2D turretCollider;
+
+    public AudioClip enemyDeath;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         turretSprite = GetComponent<SpriteRenderer>();
+        deathSource = GetComponent<AudioSource>();
+        turretCollider = gameObject.GetComponent<BoxCollider2D>();
+
+        if (deathSource)
+        {
+            deathSource.clip = enemyDeath;
+            deathSource.loop = false;
+        }
 
         if(projectileForce <= 0)
         {
@@ -67,6 +79,11 @@ public class EnemyTurret : MonoBehaviour
         {
             turretSprite.flipX = !turretSprite.flipX;
         }
+
+        if (!deathSource.isPlaying && !turretCollider.enabled)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Fire()
@@ -97,7 +114,9 @@ public class EnemyTurret : MonoBehaviour
             Destroy(collision.gameObject);
             if(health <= 0)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                turretCollider.enabled = false;
+                deathSource.Play();
                 GameManager.instance.score++;
             }
         }

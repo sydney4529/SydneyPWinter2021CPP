@@ -12,6 +12,11 @@ public class EnemyWalker : MonoBehaviour
     SpriteRenderer sr;
     Animator anim;
 
+    AudioSource deathSource;
+    Collider2D walkerCollider;
+
+    public AudioClip enemyDeath;
+
     public int health;
     public float speed;
     // Start is called before the first frame update
@@ -20,6 +25,15 @@ public class EnemyWalker : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        deathSource = GetComponent<AudioSource>();
+        walkerCollider = gameObject.GetComponent<BoxCollider2D>();
+
+        if (deathSource)
+        {
+            deathSource.clip = enemyDeath;
+            deathSource.loop = false;
+        }
 
         if (speed <= 0)
         {
@@ -44,6 +58,11 @@ public class EnemyWalker : MonoBehaviour
             {
                 rb.velocity = new Vector2(speed, rb.velocity.y);
             }
+        }
+
+        if (!deathSource.isPlaying && !walkerCollider.enabled)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -74,6 +93,8 @@ public class EnemyWalker : MonoBehaviour
 
     public void FinishedDeath()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        walkerCollider.enabled = false;
+        deathSource.Play();
     }
 }

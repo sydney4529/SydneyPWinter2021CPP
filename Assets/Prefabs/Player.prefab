@@ -250,6 +250,7 @@ MonoBehaviour:
   groundCheckRadius: 0.01
   isFiring: 0
   isCape: 0
+  jumpSFX: {fileID: 8300000, guid: 23a2eea12b719524583c4bab6d5f5aaa, type: 3}
 --- !u!95 &2123088253
 Animator:
   serializedVersion: 3
@@ -285,6 +286,7 @@ MonoBehaviour:
   spawnPointRight: {fileID: 1590366592}
   projectileSpeed: 10
   projectilePrefab: {fileID: 4120734651686393210, guid: 90176da38ebf1cc468e01561064a2610, type: 3}
+  fireSFX: {fileID: 8300000, guid: 2326944ad69f3f84c85c31c13210056d, type: 3}
 --- !u!114 &105810194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,4 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2e774ced6729c48a9b0dc85854a107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieSource: {fileID: 0}
+  playerBox: {fileID: 2334583008838244920}
+  playerDie: {fileID: 8300000, guid: c9965039460ce964ca9859573cc6299c, type: 3}
   bounceForce: 200

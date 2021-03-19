@@ -38,9 +38,21 @@ public class CanvasManager : MonoBehaviour
     public Image[] hearts;
     public Sprite heartSprite;
 
+    public AudioClip pauseSound;
+
+    AudioSource pauseAudio;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (pauseMenu)
+        {
+            pauseAudio = gameObject.AddComponent<AudioSource>();
+            pauseAudio.clip = pauseSound;
+            pauseAudio.loop = false;
+
+        }
+        
 
         if (pauseMenu)
         {
@@ -98,6 +110,7 @@ public class CanvasManager : MonoBehaviour
                 {
                     //ReturnToGame();
                     PauseGame();
+                    //pauseAudio.Play();
                 }
             }
         }
@@ -157,6 +170,7 @@ public class CanvasManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        pauseAudio.Play();
         Time.timeScale = 0;
     }
 
@@ -164,6 +178,7 @@ public class CanvasManager : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        pauseAudio.Play();
         if (soundMenu.activeSelf)
         {
             soundMenu.SetActive(false);
